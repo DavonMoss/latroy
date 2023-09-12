@@ -6,8 +6,6 @@
     <link href="./styles.css" rel="stylesheet"/>
   </head>
 
-
-  <!-- I think the reason templeOS website zooms good is because things are sized with px?-->
   <body>
     <div id="container">
       <div id="top-part">
