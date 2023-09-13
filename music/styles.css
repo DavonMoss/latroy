@@ -1,6 +1,18 @@
+@font-face{
+  font-family: font_one;
+  src:url(./../fonts/Modeseven-L3n5.ttf);
+}
+
 #home {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+}
+
+#home-clickable {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:500px;
+  text-align: center;
+  text-decoration: none;
 }
 
 #container {
@@ -8,19 +20,33 @@
   height: 1000px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #EEEEEE;
 }
 
 #songs-list {}
 
-#song-card {}
+.song-card {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 
-#song-release-date{}
+.song-release-date{}
 
-#song-title{}
+.song-title{
+  text-align: center;
+  font-family: font_one;
+}
 
-#song-blurb{}
+.song-blurb{}
 
-#song-player{}
+.song-player{}
 
-#song-lyrics{}
+.lyrics-button{
+  cursor: pointer;
+  color: gray;
+}
+
+.song-lyrics{
+  display: none;
+}

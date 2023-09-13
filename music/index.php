@@ -8,12 +8,36 @@
 </head>
 
 <body>
-  <div id="container">
+  <!-- Importing jQuery. -->
+  <script src="./../libs/jquery-3.7.1.js"></script>
 
+  <!-- Song card functionality. -->
+  <script>
+    let slide_speed = 500;		// SPEED TO REVEAL LYRICS AT.
+
+    $(document).ready(function() {
+      $(".song-card").on("click", ".lyrics-button", function(event) {
+        let $lyrics = $(this).parent().find(".song-lyrics");
+        let $lyrics_button = $(this);
+
+        if($lyrics.is(':visible')) {
+          $lyrics_button.html("show lyrics");
+          $lyrics.slideUp(slide_speed);
+        } else {
+          $lyrics_button.html("hide lyrics");
+          $lyrics.slideDown(slide_speed);
+        }
+
+        event.preventDefault();
+      });
+    });
+  </script>
+
+  <div id="container">
     <!-- Back to home page button and icons. -->
     <div id="home">
-      <a href="./..">
-        <img src="./../images/arrow.png" alt="arrow" width=30% height=30%>
+      <a id="home-clickable" href="./..">
+        <img src="./../images/back_3.png" alt="arrow" width=20% height=20%>
         <img src="./../images/win95pc.png" alt="pretty computer" width=30% height=30%>
       </a>
     </div>
@@ -39,12 +63,18 @@
 
       <!-- Generate card for each song.  -->
       <?php while($song = mysqli_fetch_assoc($songs)) { ?>
-        <div id="song-card">
-          <div id="song-release-date"><?php echo $song['release_date']; ?></div>
-          <div id="song-title"><?php echo $song['title']; ?></div>
-          <div id="song-blurb"><?php echo $song['blurb']; ?></div>
-          <audio id-"song-player" controls src="<?php echo $song['audio_file_path'] ?>"></audio>
-          <div id="song-lyrics"><?php echo $song['lyrics']; ?></div>
+        <div class="song-card">
+          <div style="text-align: center;">
+            <img src="./../images/win95music.png" alt="yandhi" width=100px height=100px>
+            <div class="song-title"><?php echo $song['title']; ?>.wav</div>
+          </div>
+          <div>
+            <div class="song-release-date"><?php echo $song['release_date']; ?></div>
+            <div class="song-blurb"><?php echo $song['blurb']; ?></div>
+            <audio class="song-player" controls src="<?php echo $song['audio_file_path'] ?>"></audio>
+            <div class="lyrics-button">show lyrics</div>
+            <div class="song-lyrics"><?php echo $song['lyrics']; ?></div>
+          </div>
         </div>
       <?php } ?>
     </div>
