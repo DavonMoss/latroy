@@ -1,0 +1,13 @@
+IDEAS:
+- add client side date/time to bottom of page.
+- create other pages for code, blog, etc.
+- setup functionality of clicking on folders and icons.
+- finalize fonts and colors.
+- initialize all content
+  - music: embed music links? maybe have images spread out on the page like visualizers, gives the feeling of the contents of the folder exploding out
+  - code: concept analysis of my code projects? maybe focusing on data structures/technology used? but in overview form, blog can be for rambly explorations 
+  - blog: have a nice directory listing of all blog posts with title, date, blurb info; be able to cycle through pages so there's no scrolling
+  - toys: what is this? live hosting of code projects maybe? for example can host image converter server side here?
+- go ahead and purchase 'latroy.net' domain and setup VPS with vultr (most likely) 
+- i think with the php db variables, the ultimate idea would be to setup an account on the database that can read but cant insert or do anything like that, and use that as the default account for end users
+- refactor database to take a path to a text file containing lyrics, gonna be way easier to upload lyrics that way

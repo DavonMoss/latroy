@@ -1,6 +1,6 @@
 @font-face {
   font-family: latroy-font;
-  src:url(./fonts/PLANK___.TTF);
+  src:url(./fonts/LEDLIGHT.otf);
 }
 
 @font-face {
@@ -85,18 +85,7 @@ body {
   text-align: center;
 
   top: 30px;
-  left: 40%;
-
-  height: 15%;
-  width: 15%;
-}
-
-#toys-folder {
-  position: relative;
-  text-align: center;
- 
-  top: 100px;
-  left: 20%;
+  left: 25%;
 
   height: 15%;
   width: 15%;
@@ -113,7 +102,7 @@ body {
   width: 15%;
 }
 
-#blog-folder {
+#notes-folder {
   position: relative;
   text-align: center;
  

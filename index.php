@@ -44,13 +44,6 @@
           <div id="folder-names">Code</div>
         </div>
 
-        <div id="toys-folder">
-          <a href="./toys/">
-            <img src="./images/win95folderopen.png" alt="bruh where the folder at" width=100 height=100>
-          </a>
-          <div id="folder-names">Toys</div>
-        </div>
-
         <div id="music-folder">
           <a href="./music/">
             <img src="./images/win95folderopen.png" alt="bruh where the folder at" width=100 height=100>
@@ -58,11 +51,11 @@
           <div id="folder-names">Music</div>
         </div>
 
-        <div id="blog-folder">
-          <a href="./blog/">
+        <div id="notes-folder">
+          <a href="./notes/">
             <img src="./images/win95folderopen.png" alt="bruh where the folder at" width=100 height=100>
           </a>
-          <div id="folder-names">Blog</div>
+          <div id="folder-names">Notes</div>
         </div>
       </div>
 
