@@ -73,7 +73,12 @@
             <div class="song-blurb"><?php echo $song['blurb']; ?></div>
             <audio class="song-player" controls src="<?php echo $song['audio_file_path'] ?>"></audio>
             <div class="lyrics-button">show lyrics</div>
-            <div class="song-lyrics"><?php echo $song['lyrics']; ?></div>
+            <div class="song-lyrics">
+              <?php
+                $lyrics = file_get_contents($song['lyrics_file_path']); 
+                echo nl2br($lyrics); 
+              ?>
+            </div>
           </div>
         </div>
       <?php } ?>

@@ -10,6 +10,35 @@
     <!-- Importing jQuery. -->
     <script src="./../libs/jquery-3.7.1.js"></script>
 
+    <!-- Client side functionality. -->
+    <script>
+      $(document).ready(function() {
+
+        // Onclick ajax code using jquery, passes clicked note title in GET request to server.
+        $(".note-title").click(function(){
+          let note_title = $(this).html();
+          note_title = note_title.replace(".txt", "");
+
+          $.ajax({
+            url: './fetch_note.php',
+            type: "GET",
+            data: ({title: note_title}),
+            success: function(data){
+              $(".note-content").html(data);
+            }
+          });
+        });
+
+        $(".note-title").on("mouseover", function() {
+          $(this).css('color', 'orange');
+        });
+        
+        $(".note-title").on("mouseout", function() {
+          $(this).css('color', 'grey');
+        });
+  
+      });
+    </script>
 
     <div id="container">
       <!-- Home button -->
@@ -23,7 +52,7 @@
       <!-- Left column: holds list of all notes for navigation purposes. Clicking one reloads contents of right column. -->
 
       <!-- Right column: displays note content in stylized fashion. Displays VIM/EMACS esque buffer by default. -->
-      <div id="notes-list">
+      <div class="notes-list">
         <!-- Establish connection with DB and pull notes. -->
         <?php
           $servername = '127.0.0.1';
@@ -37,39 +66,25 @@
           if(!$db_connection) {
             die("mission failed: " . mysqli_connect_error());
           } else {
-            $notes = mysqli_query($db_connection, "select * from notes");
+            $notes = mysqli_query($db_connection, "select * from notes where not title='default'");
           }
         ?>
 
-        <!-- Generate card for each note.  -->
-        <?php while($note = mysqli_fetch_assoc($notes)) { ?>
-          <div class="note-title"><?php echo $note['title']; ?>.txt</div>
-        <?php } ?>
+        <div class="titles-list">
+          <!-- Generate card for each note.  -->
+          <?php while($note = mysqli_fetch_assoc($notes)) { ?>
+            <div class="note-title"><?php echo $note['title']; ?>.txt</div>
+          <?php } ?>
+        </div>
         <div class="note-content">
-          <!-- this is what it all hinges on, jquery to dynamically create this query on click? -->
-
-          <!-- so this is wrong due to nature of server/client side. by the time we're executing js
-               the php is long gone. so i cant use db queries to load the shit dynamically. maybe i can
-               load it all at once and just hide/unhide it? other option if i DID want to do db queries
-	       based on client input is AJAX apparently. will look into it.  -->
- 
-          <script>
-            $(document).ready(function() {
-              $(".note-title").on("click", function(event) {
-                let $query = "SELECT * FROM notes WHERE title='" + $(this).html + "'";
-
-                event.preventDefault();
-              });
-            });
-          </script>
-          <?php
-            $note_query = mysqli_query($db_connection, "SELECT * FROM notes WHERE title='my_first_note'");
-       
-            $note = mysqli_fetch_assoc($note_query);
-            $contents = file_get_contents($note['note_file_path']);
+          <!-- Default display -->
+          <?php 
+            $default_query = mysqli_query($db_connection, "select * from notes where title='default'");
+            $default = mysqli_fetch_assoc($default_query);
+            $default_contents = file_get_contents($default['note_file_path']);
             echo ("<pre>");
-            echo $contents;
-            echo ("</pre>"); 
+            echo $default_contents;
+            echo ("</pre>");
           ?>
         </div>
       </div>

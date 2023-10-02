@@ -9,7 +9,7 @@
   <body>
     <div id="container">
       <div id="top-part">
-        <div id="latroy">LATROY</div>
+        <div id="latroy">latroy</div>
         <div id="welcome-message">
             <?php
               $servername = '127.0.0.1';

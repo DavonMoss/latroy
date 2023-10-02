@@ -21,3 +21,25 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.notes-list {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  margin-top: 50px;
+}
+
+.note-title {
+  cursor: pointer;
+  color: gray;
+  font-family: font_one;
+}
+
+.note-content {
+  font-family: font_one;
+  font-size: 16px;
+}
+
+.titles-list {
+  margin-top: 10px;
+  margin-right: 150px;
+}
