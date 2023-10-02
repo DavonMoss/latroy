@@ -37,11 +37,11 @@
 
       <!-- FOLDERS -->
       <div id="folders">
-        <div id="code-folder">
-          <a href="./code/">
+        <div id="photos-folder">
+          <a href="./photos/">
             <img src="./images/win95folderopen.png" alt="bruh where the folder at" width=100 height=100>
           </a>
-          <div id="folder-names">Code</div>
+          <div id="folder-names">Photos</div>
         </div>
 
         <div id="music-folder">
@@ -61,12 +61,18 @@
 
       <!-- SOCIALS -->
       <div class="socials">
-        <a href="https://github.com/DavonMoss" target="_blank">
-          <img src="./images/github.svg" alt="github_icon" width=35% height=35%>
-        </a>
-        <a href="https://www.linkedin.com/in/davonmoss/" target="_blank">
-          <img src="./images/linkedin.svg" alt="linkedin_icon" width=35% height=35%>
-        </a>
+        <div>
+          <a href="https://github.com/DavonMoss" target="_blank">
+            <img src="./images/github.svg" alt="github_icon" width=80 height=80>
+          </a>
+          <div id="folder-names">Code</div>
+        </div>
+        <div>
+          <a href="https://www.linkedin.com/in/davonmoss/" target="_blank">
+            <img src="./images/linkedin.svg" alt="linkedin_icon" width=80px height=80px>
+          </a>
+          <div id="folder-names">LinkedIn</div>
+        </div>
       </div>
 
       <div id="time">

@@ -80,7 +80,7 @@ body {
   margin-bottom: 210px;
 }
 
-#code-folder {
+#photos-folder {
   position: relative;
   text-align: center;
 
@@ -116,10 +116,12 @@ body {
 .socials {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-bottom: 50px;
 }
 
 #time {
   font-family: time-font;
   font-size: 26px;
   text-align: center;
+  margin-top: 100px;
 }
