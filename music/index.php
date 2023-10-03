@@ -14,8 +14,26 @@
   <!-- Song card functionality. -->
   <script>
     let slide_speed = 500;		// SPEED TO REVEAL LYRICS AT.
-
+ 
     $(document).ready(function() {
+      // playbar update code
+      function update_playbar (custom_audio_player) {
+        let audio = custom_audio_player.find(".song-player");
+        let time = custom_audio_player.find(".time-stamp");
+        let progress = custom_audio_player.find(".progress-bar");      
+        let bg_bar = custom_audio_player.find(".custom-play-bar")
+
+        // update time stamp 
+        time.html(audio[0].currentTime);
+        
+
+        // animate progress bar THIS SHIT IS SCUFFED
+        let percentage = audio[0].currentTime / audio[0].duration;
+        progress.width(percentage * bg_bar.width());
+        progress.height(bg_bar.height());
+      }
+
+      // lyric reveal code
       $(".song-card").on("click", ".lyrics-button", function(event) {
         let $lyrics = $(this).parent().find(".song-lyrics");
         let $lyrics_button = $(this);
@@ -29,6 +47,21 @@
         }
 
         event.preventDefault();
+      });
+
+      // play/pause button
+      $(".song-card").on("click", ".custom-play-button", function(event) {
+        let audio = $(this).parent().parent().find(".song-player");
+        
+        audio[0].ontimeupdate = function() {update_playbar($(this).parent())};
+
+        if (audio[0].paused) {
+          audio.trigger('play');
+          $(this).attr('src', "./../images/pause_button.png");
+        } else {
+          audio.trigger('pause');
+          $(this).attr('src', "./../images/play_button.png");        
+        }
       });
     });
   </script>
@@ -71,7 +104,18 @@
           <div>
             <div class="song-release-date"><?php echo $song['release_date']; ?></div>
             <div class="song-blurb"><?php echo $song['blurb']; ?></div>
-            <audio class="song-player" controls src="<?php echo $song['audio_file_path'] ?>"></audio>
+
+            <div class="custom-audio-player">
+              <audio class="song-player" controls src="<?php echo $song['audio_file_path'] ?>"></audio>
+              <img class="custom-play-button" src="./../images/play_button.png" alt="play-pause-button" width=100% height=auto>
+              <div>
+                <img class="custom-play-bar" src="./../images/playbar_empty.png" alt="playbar">
+                <img class="progress-bar" src="./../images/playbar_full.png" alt="playbar" width=0%>
+                <img class="slider" src="./../images/play_slider.png" alt="playbar-slider" width=5% height=auto>
+              </div>
+              <div class="time-stamp">0:00</div>
+            </div>           
+
             <div class="lyrics-button">show lyrics</div>
             <div class="song-lyrics">
               <?php

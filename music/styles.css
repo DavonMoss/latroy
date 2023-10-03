@@ -42,6 +42,15 @@
 
 .song-player{}
 
+.custom-audio-player {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr 1fr;
+}
+
+.custom-play-button {
+
+}
+
 .lyrics-button{
   cursor: pointer;
   color: gray;
@@ -49,4 +58,15 @@
 
 .song-lyrics{
   display: none;
+}
+
+.progress-bar {
+  position: relative;
+  left: 0px;
+  top: -29px;
+}
+
+.slider {
+  position: relative;
+  left: 0px;
 }

@@ -17,7 +17,12 @@
         // Onclick ajax code using jquery, passes clicked note title in GET request to server.
         $(".note-title").click(function(){
           let note_title = $(this).html();
-          note_title = note_title.replace(".txt", "");
+
+          if(note_title == "[ CLEAR SCREEN ]") {
+            note_title = "default";
+          } else {
+            note_title = note_title.replace(".txt", "");
+          }
 
           $.ajax({
             url: './fetch_note.php',
@@ -28,7 +33,8 @@
             }
           });
         });
-
+      
+        // Mouseover highlight
         $(".note-title").on("mouseover", function() {
           $(this).css('color', 'orange');
         });
@@ -72,6 +78,7 @@
 
         <div class="titles-list">
           <!-- Generate card for each note.  -->
+          <div class="note-title">[ CLEAR SCREEN ]</div>
           <?php while($note = mysqli_fetch_assoc($notes)) { ?>
             <div class="note-title"><?php echo $note['title']; ?>.txt</div>
           <?php } ?>
