@@ -1,8 +1,15 @@
 # latroy
 Repository for latroy.net website.
 
-todo:
-- implement photos page:
-	- photos stored in db, just a photo id and a file path
-	- photos page picks 5 or so random photos based on PID, places them scattered on the page, photos can overlap
-	- which one: has a refresh button that replaces the images OR cycles automatically through batches of images
+Version 1.0.0
+- LANDING: landing page, shows site structure and has social links
+	- future goals: potentially add more social links
+- PHOTOS: page to explore db of images, one click at a time.
+	- future goals: upload more images, optimize loading time, kinda slow rn
+- NOTES: page to store notes on anything, most likely programming/DSA notes.
+	- future goals: populate with useful content
+- MUSIC: page to host my music/mixes/any audio stuff.
+	- future goals: more content
+- MISC GOALS:
+	- make sure php code is secure, remove all passwords and stuff like that
+	- create scripts to help loading images and text files into mariadb

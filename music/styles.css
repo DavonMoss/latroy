@@ -31,7 +31,9 @@
   margin-bottom: 50px;
 }
 
-.song-release-date{}
+.song-release-date{
+  color: gray;
+}
 
 .song-title{
   text-align: center;
@@ -44,11 +46,13 @@
 
 .custom-audio-player {
   display: grid;
-  grid-template-columns: 1fr 10fr 1fr 1fr;
+  grid-template-columns: 0.5fr 8fr 1fr;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .custom-play-button {
-
+  cursor: pointer;
 }
 
 .lyrics-button{
@@ -61,12 +65,37 @@
 }
 
 .progress-bar {
-  position: relative;
-  left: 0px;
-  top: -29px;
 }
 
 .slider {
+  cursor: pointer;
   position: relative;
-  left: 0px;
+  left: -5px;
+  z-index: 99;
+}
+
+.playbar {
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  margin-right: 30px;
+}
+
+.inner {
+  position: absolute;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.unselectable {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.time-stamp {
+  font-family: font_one;
+  font-size: 20px;
 }

@@ -27,6 +27,7 @@
 }
 
 .refresh-button {
+  cursor: pointer;
   text-align: center;
   font-family: font_one;
   font-size: 50px;
