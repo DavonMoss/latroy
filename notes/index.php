@@ -60,6 +60,7 @@
       <!-- Right column: displays note content in stylized fashion. Displays VIM/EMACS esque buffer by default. -->
       <div class="notes-list">
         <!-- Establish connection with DB and pull notes. -->
+        <!-- @CLEANUP: more unsafe php -->
         <?php
           $servername = '127.0.0.1';
           $serverport = '3306';

@@ -11,6 +11,9 @@
       <div id="top-part">
         <div id="latroy">latroy</div>
         <div id="welcome-message">
+            <!-- @CLEANUP: Figure out how to properly handle creds and stuff like this in PHP. -->
+            <!-- Making the database connection is used across all pages, so maybe that should be its own php file. -->
+            <!-- Furthermore, seems like the idea is to get plaintext creds out of the root, and into hashed files. -->
             <?php
               $servername = '127.0.0.1';
               $serverport = '3306';
@@ -24,7 +27,6 @@
                   die("mission failed: " . mysqli_connect_error());
               } else {
                   $query_result = mysqli_query($db_connection, "select message from welcome_messages");
-                  
                   echo ">:";
                   while($curr_row = mysqli_fetch_assoc($query_result)) {
                       echo $curr_row['message'];

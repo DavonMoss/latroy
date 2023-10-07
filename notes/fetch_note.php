@@ -1,4 +1,5 @@
 <!-- PHP code to safely construct and execute query. NO INJECTION HERE BOY -->
+<!-- @CLEANUP: more unsafe php -->
 <?php
   $db_connection = mysqli_connect('127.0.0.1', 'latroy_admin', 'admin', 'latroy_net', '3306');
 

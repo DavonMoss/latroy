@@ -3,9 +3,6 @@
   src:url(./../fonts/Modeseven-L3n5.ttf);
 }
 
-#home {
-}
-
 #home-clickable {
   display: block;
   margin-left: auto;
@@ -22,8 +19,6 @@
   margin-right: auto;
 }
 
-#songs-list {}
-
 .song-card {
   display: grid;
   grid-template-columns: 1fr 5fr;
@@ -39,10 +34,6 @@
   text-align: center;
   font-family: font_one;
 }
-
-.song-blurb{}
-
-.song-player{}
 
 .custom-audio-player {
   display: grid;
@@ -62,9 +53,6 @@
 
 .song-lyrics{
   display: none;
-}
-
-.progress-bar {
 }
 
 .slider {

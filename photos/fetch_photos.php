@@ -1,3 +1,4 @@
+<!-- @CLEANUP: more unsafe php -->
 <?php
   $db_connection = mysqli_connect("127.0.0.1", "latroy_admin", "admin", "latroy_net", "3306");
 
