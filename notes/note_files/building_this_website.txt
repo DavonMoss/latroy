@@ -1,0 +1,83 @@
+tl;dr - the internet isn't magic, websites aren't magic, it's all just code that someone wrote - and you can too!
+
+=======================
+= Building latroy.net =
+=   by: Davon Moss    =
+=   October 12, 2023  =
+=======================
+
+This website is implemented using the following stack:
+
+	Linux
+	Apache2
+	MariaDB (MySQL)
+	PHP
+	
+And for the front end:
+	
+	Vanilla JS + jQuery
+	HTML/CSS of course
+
+I had done some website stuff in college with more complicated tools (mongodb, node, react, etc...), because
+my professor at the time insisted that those were the tools of the future - that's what would get us hired. I
+don't think he was even wrong, but working with those, I never really wrapped my head around what a website
+actually is, and what's happening on a fundamental level. A good, hireable engineer understands things deeply.
+
+I wanted to build a website from 'scratch', and after digging around the internet I found the LAMP stack, which seems
+to be the closest thing to a barebones website implementation without writing each of the components (web server, db, OS?)
+yourself. Because things aren't packaged into predesigned paradigms, you have to interact with each major component of what
+it takes to get your website displayed to the world. Building this website has been really fun, and now I can say I have a
+much clearer picture.
+
+Something like this:
+
+[my physical server]								[client physical computer]
+Linux (operating system)							Whatever OS
+  |_ Apache2 (web server program, handles HTTP)			  	 	  |_Browser (program to display HTML/CSS, run Javascript, handle HTTP)
+  |_ MariaDB (database program)		     				 	    |_JS interpreter (or JIT compiler whatever)
+  |_ PHP interpreter (program that interprets php scripts i write)  		    |_HTML/CSS processing
+
+A website is just a document that a computer sends over the internet to a client's computer. There are
+alot of steps that need to happen in the process, and each of the steps is handled by a specific program:
+
+	x. Formatting the document 	- this is what HTML and CSS are, they describe an outline for the document. If you can
+				     	  imagine a blank poster board, HTML tags and their CSS styling descriptions are like
+				     	  all the little paper cutouts you place on the board to display information in visually
+				     	  appealing ways.
+
+	x. Dynamic website elements 	- HTML and CSS, much like the poster board example, are static. They can't process logic
+				      	  like actual programming languages can. This is where Javascript enters. Every browser 
+				      	  has a client-side interpreter, which can run Javascript code. If you want to respond 
+				      	  dynamically to user input, or changes on the clients browser, vanilla JS can often do
+				      	  the trick - I'm also using jQuery here which is just a lightweight library that makes
+				      	  some of the code more convenient to write (i.e. selectors $(".css-class")). To tie it
+					  in to the poster board idea, this would be like creating interactive paper cutouts such
+					  as flaps or sliders for people to use on the posterboard.
+
+	x. Dynamic data processing	- Again, because HTML and CSS are static, if you make any updates to the data in the database, 
+					  you need a way to show that new stuff on the website. It would be a massive waste of time
+					  to create new HTML and remove old stuff everytime you want to display something different.
+					  PHP handles this. PHP is a server-side scripting language which can use logic to generate
+					  HTML based off of what's in your database. For example, this notes section you're in pulls
+					  all it's info from the db, and creates HTML with proper styling. All I have to do is upload
+					  the content and the server handles the document creation. PHP isn't only used for that but
+					  its a huge part of it. As the poster board analogy falls apart, I'll try to tie it in one
+					  last time - this is like building a robot in your house which automatically creates paper
+					  cutouts and pastes them on the board for you. Alot easier than that though lol.
+
+	x. Sending and receiving	- With the document ready, we need to send it off to the client. But how does that even happen?
+					  This is where the web server (in my case apache2) and the browser come in. Both of these are
+					  programs that are capable of sending and receiving data which is packaged according to the HTTP
+					  protocol, which is really just a fancy way of saying a data format. The client's browser sends
+					  requests to the apache program on my physical server via its address (latroy.net), and the 
+					  apache program processes that and decides what to send back. Of course there's fine grained
+					  details in there, but at its core, it's just two computer programs sending each other inputs
+					  and receiving each others outputs. Not even gonna bother with the poster board anymore.
+
+Overall, I'm very glad I stuck this project through. Now armed with a deeper understanding of what is even going on,
+I feel like it'll be easier to learn other frameworks. Each of the quirks and ideas that come bundled with these different
+stacks will now look like variations of some core principles. Learning them before felt overwhelming, because each
+piece of the documentation felt like something brand new, and I had no clue how anything was fitting together. 
+
+With this website released though, I'm turning my attention to another learning project, PNG decoding and image format 
+conversion in C++. Should have the neat side effect of drastically speeding up the /photos page. Note coming soon...

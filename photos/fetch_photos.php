@@ -1,6 +1,7 @@
-<!-- @CLEANUP: more unsafe php -->
 <?php
-  $db_connection = mysqli_connect("127.0.0.1", "latroy_admin", "admin", "latroy_net", "3306");
+  require_once("../../creds/credentials.php");
+
+  $db_connection = mysqli_connect($servername, $dbuser, $dbpass, $dbname, $serverport);
 
   if(!$db_connection) {
     die("mission failed: " . mysqli_connect_error());

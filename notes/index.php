@@ -60,14 +60,9 @@
       <!-- Right column: displays note content in stylized fashion. Displays VIM/EMACS esque buffer by default. -->
       <div class="notes-list">
         <!-- Establish connection with DB and pull notes. -->
-        <!-- @CLEANUP: more unsafe php -->
         <?php
-          $servername = '127.0.0.1';
-          $serverport = '3306';
-          $dbuser = 'latroy_admin';
-          $dbpass = 'admin';
-          $dbname = 'latroy_net';
-
+          require_once("../../creds/credentials.php");       
+ 
           $db_connection = mysqli_connect($servername, $dbuser, $dbpass, $dbname, $serverport);
 
           if(!$db_connection) {

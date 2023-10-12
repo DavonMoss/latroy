@@ -26,20 +26,15 @@
     <!-- Code to generate cards for each sound file, will have an audio file, title, blurb, and lyrics. -->
     <div id="songs-list">
       <!-- Establish connection with DB and pull songs. -->
-      <!-- @CLEANUP: more unsecure php -->
       <?php
-        $servername = '127.0.0.1';
-        $serverport = '3306';
-        $dbuser = 'latroy_admin';
-        $dbpass = 'admin';
-        $dbname = 'latroy_net';
+        require_once("../../creds/credentials.php");
 
         $db_connection = mysqli_connect($servername, $dbuser, $dbpass, $dbname, $serverport);
 
         if(!$db_connection) {
           die("mission failed: " . mysqli_connect_error());
         } else {
-          $songs = mysqli_query($db_connection, "select * from songs");
+          $songs = mysqli_query($db_connection, "select * from songs ORDER BY release_date DESC");
         }
       ?>
 
@@ -56,6 +51,7 @@
 
             <div class="custom-audio-player">
               <audio hidden class="song-player" controls src="<?php echo $song['audio_file_path'] ?>"></audio>
+              <script></script>
 
               <div style="text-align: center;">
                 <img class="custom-play-button unselectable" src="./../images/play_button.png" alt="play-pause-button" width=55% height=auto>
@@ -71,7 +67,8 @@
                 </div>
               </div>
 
-              <div class="time-stamp" style="test-align: center;">00:00:00</div>
+              <div class="time-stamp" style="test-align: center;">
+              </div>
             </div>           
 
             <div class="lyrics-button unselectable">show lyrics</div>

@@ -4,9 +4,26 @@ let mouse_percentage = 0;		// POSITION OF MOUSE WITHIN PLAYBAR LENGTH [0 to 1]
 
 $(document).ready(function() {
 
+  function fetch_duration(player) {
+    let audios = player.find(".song-player");
+    let times = player.find(".time-stamp");
+
+    console.log(audios);
+    console.log(times);
+
+    for (let i = 0; i < times.length; i++) {
+      times[i].innerText = format_time(audios[i].duration);
+    }
+  }
+
+  $(window).on("load", function(){
+    fetch_duration($(".custom-audio-player"));
+  });
+
+
   // Helper function to convert time in seconds into HH:MM:SS format for song duration.
   function format_time(time) {
-    // @CLEANUP: something in my heart is telling me that this is a weird way to do this but i dont know why
+    // @CONSIDER: something in my heart is telling me that this is a weird way to do this but i dont know why
     let hours = Math.floor(time/3600);
     let minutes = Math.floor((time % 3600)/60);
     let seconds = Math.floor(time - (hours * 3600) - (minutes * 60));
@@ -24,6 +41,7 @@ $(document).ready(function() {
 
     // update time stamp 
     time.html(format_time(audio[0].currentTime));
+    time.css('color', 'grey');
 
     // animate progress bar
     let percentage = audio[0].currentTime / audio[0].duration;

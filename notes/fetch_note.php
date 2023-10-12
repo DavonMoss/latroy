@@ -1,7 +1,8 @@
 <!-- PHP code to safely construct and execute query. NO INJECTION HERE BOY -->
-<!-- @CLEANUP: more unsafe php -->
 <?php
-  $db_connection = mysqli_connect('127.0.0.1', 'latroy_admin', 'admin', 'latroy_net', '3306');
+  require_once("../../creds/credentials.php");
+
+  $db_connection = mysqli_connect($servername, $dbuser, $dbpass, $dbname, $serverport);
 
   if(!$db_connection) {
     die("Failed to connect to db, couldn't fetch note: " . mysqli_connect_error());
