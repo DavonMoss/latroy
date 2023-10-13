@@ -1,0 +1,255 @@
+/*==============================*/
+/*	 FONT DECLARATIONS 	*/
+/*==============================*/
+
+@font-face {
+  font-family: latroy-font;
+  src:url(./fonts/Infinite.ttf);
+}
+
+@font-face {
+  font-family: pixel-font;
+  src:url(./fonts/Modeseven-L3n5.ttf);
+}
+
+/*======================================================================================*/
+/* 	SHARED STYLINGS - these affect components that are used on multiple pages 	*/
+/*======================================================================================*/
+
+#home-clickable {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:500px;
+  text-align: center;
+  text-decoration: none;
+}
+
+#container {
+  width: 1100px;
+  height: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.unselectable {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/*==============================================================*/
+/* 	LANDING - component styling for latroy.net/  		*/
+/*==============================================================*/
+
+.landing-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: black; }
+}
+
+#folder-names {
+  font-family: pixel-font;
+  font-size: 26px;
+  text-align: center;
+}
+
+#top-part {
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+#latroy {
+  font-family: latroy-font;
+  font-size: 150px;
+  margin-bottom: 25px;
+}
+
+#welcome-message {
+  font-family: pixel-font;
+  font-size: 25px;
+  overflow: hidden;
+  border-right: .50em solid black;
+  white-space: nowrap; 
+  margin: 0 auto; 
+  letter-spacing: .10em; 
+  animation: 
+    typing 2.0s steps(40, end),
+    blink-caret .50s step-end infinite;
+}
+
+#folders {
+  margin-bottom: 210px;
+}
+
+#photos-folder {
+  position: relative;
+  text-align: center;
+
+  top: 30px;
+  left: 25%;
+
+  height: 15%;
+  width: 15%;
+}
+
+#music-folder {
+  position: relative;
+  text-align: center;
+ 
+  top: 20px;
+  left: 64%;
+
+  height: 15%;
+  width: 15%;
+}
+
+#notes-folder {
+  position: relative;
+  text-align: center;
+ 
+  top: 100px;
+  left: 44%;
+
+  height: 15%;
+  width: 15%;
+}
+
+.socials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 50px;
+}
+
+#landing-time {
+  font-family: pixel-font;
+  font-size: 26px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+/*==============================================================*/
+/* 	PHOTOS - component styling for latroy.net/photos  	*/
+/*==============================================================*/
+
+.photo {
+  position: relative;
+}
+
+.refresh-button {
+  cursor: pointer;
+  text-align: center;
+  font-family: pixel-font;
+  font-size: 50px;
+  margin-top: 25px;   
+}
+
+/*==============================================================*/
+/* 	MUSIC - component styling for latroy.net/music  	*/
+/*==============================================================*/
+
+.song-card {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.song-release-date {
+  color: gray;
+}
+
+.song-title {
+  text-align: center;
+  font-family: pixel-font;
+}
+
+.custom-audio-player {
+  display: grid;
+  grid-template-columns: 0.5fr 8fr 1fr;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.custom-play-button {
+  cursor: pointer;
+}
+
+.lyrics-button {
+  cursor: pointer;
+  color: gray;
+}
+
+.song-lyrics {
+  display: none;
+}
+
+.slider {
+  cursor: pointer;
+  position: relative;
+  left: -5px;
+  z-index: 99;
+}
+
+.playbar {
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  margin-right: 30px;
+}
+
+.inner {
+  position: absolute;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.time-stamp {
+  font-family: pixel-font;
+  font-size: 20px;
+}
+
+/*==============================================================*/
+/* 	NOTES - component styling for latroy.net/notes  	*/
+/*==============================================================*/
+
+#notes-container {
+  width: 1400px;
+  height: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.notes-list {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  margin-top: 50px;
+}
+
+.note-title {
+  cursor: pointer;
+  color: gray;
+  font-family: pixel-font;
+}
+
+.note-content {
+  font-family: pixel-font;
+  font-size: 14px;
+}
+
+.titles-list {
+  margin-top: 10px;
+  margin-right: 50px;
+}

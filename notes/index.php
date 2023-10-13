@@ -3,12 +3,12 @@
 <html>
   <head>
     <title>latroy/notes</title>
-    <link href="./styles.css" rel="stylesheet"/>
+    <link href="./../src/styles.css" rel="stylesheet"/>
   </head>
 
   <body>
     <!-- Importing jQuery. -->
-    <script src="./../libs/jquery-3.7.1.js"></script>
+    <script src="./../src/libs/jquery-3.7.1.js"></script>
 
     <!-- Client side functionality. -->
     <script>
@@ -25,7 +25,7 @@
           }
 
           $.ajax({
-            url: './fetch_note.php',
+            url: './../src/fetch_note.php',
             type: "GET",
             data: ({title: note_title}),
             success: function(data){
@@ -46,12 +46,12 @@
       });
     </script>
 
-    <div id="container">
+    <div id="notes-container">
       <!-- Home button -->
       <div id="home">
         <a id="home-clickable" href="./..">
-          <img src="./../images/back_3.png" alt="arrow" width=20% height=20%>
-          <img src="./../images/win95pc.png" alt="pretty computer" width=30% height=30%>
+          <img src="./../src/images/back_3.png" alt="arrow" width=20% height=20%>
+          <img src="./../src/images/win95pc.png" alt="pretty computer" width=30% height=30%>
         </a>
       </div>
 

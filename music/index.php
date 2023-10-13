@@ -4,22 +4,22 @@
 
 <head>
   <title>latroy/music</title>
-  <link href="./styles.css" rel="stylesheet"/>
+  <link href="./../src/styles.css" rel="stylesheet"/>
 </head>
 
 <body>
   <!-- Importing jQuery. -->
-  <script src="./../libs/jquery-3.7.1.js"></script>
+  <script src="./../src/libs/jquery-3.7.1.js"></script>
 
   <!-- Song card functionality. -->
-  <script src="./song_card.js"></script>
+  <script src="./../src/song_card.js"></script>
 
   <div id="container">
     <!-- Back to home page button and icons. -->
     <div id="home">
       <a id="home-clickable" href="./..">
-        <img src="./../images/back_3.png" alt="arrow" width=20% height=20%>
-        <img src="./../images/win95pc.png" alt="pretty computer" width=30% height=30%>
+        <img src="./../src/images/back_3.png" alt="arrow" width=20% height=20%>
+        <img src="./../src/images/win95pc.png" alt="pretty computer" width=30% height=30%>
       </a>
     </div>
 
@@ -42,7 +42,7 @@
       <?php while($song = mysqli_fetch_assoc($songs)) { ?>
         <div class="song-card">
           <div style="text-align: center;">
-            <img src="./../images/win95music.png" alt="yandhi" width=100px height=100px>
+            <img src="./../src/images/win95music.png" alt="yandhi" width=100px height=100px>
             <div class="song-title"><?php echo $song['title']; ?>.wav</div>
           </div>
           <div>
@@ -54,16 +54,16 @@
               <script></script>
 
               <div style="text-align: center;">
-                <img class="custom-play-button unselectable" src="./../images/play_button.png" alt="play-pause-button" width=55% height=auto>
+                <img class="custom-play-button unselectable" src="./../src/images/play_button.png" alt="play-pause-button" width=55% height=auto>
               </div>
 
               <div class="playbar">
                 <div class="inner">
-                  <img class="background-bar unselectable" src="./../images/playbar_empty.png" alt="playbar" width=100% height=25px>
+                  <img class="background-bar unselectable" src="./../src/images/playbar_empty.png" alt="playbar" width=100% height=25px>
                 </div>
                 <div class="inner">
-                  <img class="progress-bar unselectable" src="./../images/playbar_full.png" alt="playbar" width=0%>
-                  <img class="slider unselectable" src="./../images/play_slider.png" alt="playbar-slider" width=15px height=auto>
+                  <img class="progress-bar unselectable" src="./../src/images/playbar_full.png" alt="playbar" width=0%>
+                  <img class="slider unselectable" src="./../src/images/play_slider.png" alt="playbar-slider" width=15px height=auto>
                 </div>
               </div>
 

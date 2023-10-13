@@ -3,7 +3,7 @@
 <html>
   <head>
     <title>latroy</title>
-    <link href="./styles.css" rel="stylesheet"/>
+    <link href="./src/styles.css" rel="stylesheet"/>
   </head>
 
   <body>
@@ -21,21 +21,21 @@
       <div id="folders">
         <div id="photos-folder">
           <a href="./photos/">
-            <img src="./images/win95folderopen.png" alt="bruh where the folder at" width=100 height=100>
+            <img class="landing-img" src="./src/images/win95folderopen.png" alt="bruh where the folder at" width=100 height=100>
           </a>
           <div id="folder-names">Photos</div>
         </div>
 
         <div id="music-folder">
           <a href="./music/">
-            <img src="./images/win95folderopen.png" alt="bruh where the folder at" width=100 height=100>
+            <img class="landing-img" src="./src/images/win95folderopen.png" alt="bruh where the folder at" width=100 height=100>
           </a>
           <div id="folder-names">Music</div>
         </div>
 
         <div id="notes-folder">
           <a href="./notes/">
-            <img src="./images/win95folderopen.png" alt="bruh where the folder at" width=100 height=100>
+            <img class="landing-img" src="./src/images/win95folderopen.png" alt="bruh where the folder at" width=100 height=100>
           </a>
           <div id="folder-names">Notes</div>
         </div>
@@ -45,19 +45,19 @@
       <div class="socials">
         <div>
           <a href="https://github.com/DavonMoss" target="_blank">
-            <img src="./images/github.svg" alt="github_icon" width=80 height=80>
+            <img class="landing-img" src="./src/images/github.svg" alt="github_icon" width=80 height=80>
           </a>
           <div id="folder-names">Code</div>
         </div>
         <div>
           <a href="https://www.linkedin.com/in/davonmoss/" target="_blank">
-            <img src="./images/linkedin.svg" alt="linkedin_icon" width=80px height=80px>
+            <img class="landing-img" src="./src/images/linkedin.svg" alt="linkedin_icon" width=80px height=80px>
           </a>
           <div id="folder-names">LinkedIn</div>
         </div>
       </div>
 
-      <div id="time">
+      <div id="landing-time">
         <script>
           let months = {
               0: "January",   
@@ -95,7 +95,7 @@
                                 timestamp.getMinutes().toString().padStart(2, '0') + ":" +
                                 timestamp.getSeconds().toString().padStart(2, '0'); 
 
-              document.getElementById("time").innerHTML = time_string;
+              document.getElementById("landing-time").innerHTML = time_string;
           }
 
           getClientTime(); 
