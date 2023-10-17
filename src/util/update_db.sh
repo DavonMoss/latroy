@@ -13,9 +13,6 @@ true_lyrics_dir=/var/www/latroy/content/lyrics_files/
 
 sql_output=./generated_statements.sql
 
-echo -n "Please enter MYSQL password for latroy_admin: "
-read creds
-
 : '
 GENERATE DIFFERENCES
 	Spits out some .compare files and ultimately a db_changes.compare file which will be used to generate SQL statements for all who need them. 
@@ -32,7 +29,7 @@ generate_differences() {
     echo ./../content/$(basename $1)/$(basename $filepath) >> /var/www/latroy/src/util/dir_files.compare
   done
   
-  mysql -u latroy_admin "-p$creds" -e "USE latroy_net; SELECT $3 INTO OUTFILE './db_files.compare' FROM $2;"
+  sudo mysql -e "USE latroy_net; SELECT $3 INTO OUTFILE './db_files.compare' FROM $2;"
   sudo mv /var/lib/mysql/db_files.compare ./db_files.compare
   sudo chown latroy ./db_files.compare 
   diff dir_files.compare db_files.compare >> ./differences.compare
@@ -114,29 +111,29 @@ generate_sql() {
 # notes
 generate_differences $true_notes_dir "notes" "note_file_path" "ADD" 
 generate_sql "notes" "note_file_path" "ADD"
-mysql -u latroy_admin "-p$creds" < $sql_output
+sudo mysql < $sql_output
 rm *.compare $sql_output
 generate_differences $true_notes_dir "notes" "note_file_path" "REMOVE" 
 generate_sql "notes" "note_file_path" "REMOVE"
-mysql -u latroy_admin "-p$creds" < $sql_output
+sudo mysql < $sql_output
 rm *.compare $sql_output
 
 # songs
 generate_differences $true_audio_dir "songs" "audio_file_path" "ADD" 
 generate_sql "songs" "audio_file_path" "ADD"
-mysql -u latroy_admin "-p$creds" < $sql_output
+sudo mysql < $sql_output
 rm *.compare $sql_output
 generate_differences $true_audio_dir "songs" "audio_file_path" "REMOVE" 
 generate_sql "songs" "audio_file_path" "REMOVE"
-mysql -u latroy_admin "-p$creds" < $sql_output
+sudo mysql < $sql_output
 rm *.compare $sql_output
 
 # photos
 generate_differences $true_photo_dir "photos" "photo_file_path" "ADD" 
 generate_sql "photos" "photo_file_path" "ADD"
-mysql -u latroy_admin "-p$creds" < $sql_output
+sudo mysql < $sql_output
 rm *.compare $sql_output
 generate_differences $true_photo_dir "photos" "photo_file_path" "REMOVE" 
 generate_sql "photos" "photo_file_path" "REMOVE"
-mysql -u latroy_admin "-p$creds" < $sql_output
+sudo mysql < $sql_output
 rm *.compare $sql_output

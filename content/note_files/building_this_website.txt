@@ -18,16 +18,9 @@ And for the front end:
 	Vanilla JS + jQuery
 	HTML/CSS of course
 
-I had done some website stuff in college with more complicated tools (mongodb, node, react, etc...), because
-my professor at the time insisted that those were the tools of the future - that's what would get us hired. I
-don't think he was even wrong, but working with those, I never really wrapped my head around what a website
-actually is, and what's happening on a fundamental level. A good, hireable engineer understands things deeply.
-
 I wanted to build a website from 'scratch', and after digging around the internet I found the LAMP stack, which seems
-to be the closest thing to a barebones website implementation without writing each of the components (web server, db, OS?)
-yourself. Because things aren't packaged into predesigned paradigms, you have to interact with each major component of what
-it takes to get your website displayed to the world. Building this website has been really fun, and now I can say I have a
-much clearer picture.
+to be the closest thing to a barebones website implementation, which is what i was looking for so that I could learn
+the fundamental technologies that make up a website.
 
 Something like this:
 
