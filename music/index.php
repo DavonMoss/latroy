@@ -5,6 +5,7 @@
 <head>
   <title>latroy/music</title>
   <link href="./../src/styles.css" rel="stylesheet"/>
+  <link href="./../src/images/win95pc.png" rel="icon" type="image/png">
 </head>
 
 <body>
